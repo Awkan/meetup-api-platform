@@ -1,0 +1,3 @@
+_api_beer:
+    resource: beer.yaml
+    prefix: /beers

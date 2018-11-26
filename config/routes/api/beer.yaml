@@ -1,0 +1,6 @@
+api_beers_item_put_disable:
+    path: '/{id}/disable'
+    defaults:
+        _controller: 'App\Action\Beer\DisableAction'
+        _api_resource_class: 'App\Entity\Beer'
+        _api_item_operation_name: 'disable'

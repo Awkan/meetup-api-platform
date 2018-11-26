@@ -1,0 +1,8 @@
+_api_platform:
+    resource: .
+    type: api_platform
+    prefix: /api
+
+_api:
+    resource: ./api/_index.yaml
+    prefix: /api

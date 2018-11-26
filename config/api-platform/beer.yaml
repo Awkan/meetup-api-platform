@@ -1,0 +1,35 @@
+App\Entity\Beer:
+    attributes:
+        denormalization_context: { groups: ['beer_write'] }
+        normalization_context: { groups: ['beer_read'] }
+    collectionOperations:
+        get:
+            method: 'GET'
+            normalization_context: { groups: ['beer_read_collection'] }
+        post:
+            method: 'POST'
+            # Optionnal since it's default config
+            denormalization_context: { groups: ['beer_write'] }
+            normalization_context: { groups: ['beer_read'] }
+    itemOperations:
+        get:
+            method: 'GET'
+            # Optionnal since it's default config
+            normalization_context: { groups: ['beer_read'] }
+        put:
+            method: 'PUT'
+            # Optionnal since it's default config
+            # denormalization_context: { groups: ['beer_write'] }
+            # normalization_context: { groups: ['beer_read'] }
+
+# Commented to disable delete route
+# Remove comment to enable DELETE route
+#        delete:
+#            method: 'DELETE'
+
+# Add the custom route to disable
+        disable:
+            method: 'PUT'
+            route_name: 'api_beers_item_put_disable'
+            normalization_context: { groups: ['beer_read'] }
+

@@ -1,0 +1,10 @@
+App\Entity\Beer:
+    attributes:
+        name:
+            groups: ['beer_read', 'beer_read_collection', 'beer_write']
+        description:
+            groups: ['beer_read', 'beer_write']
+        organic:
+            groups: ['beer_write']
+        status:
+            groups: ['beer_read_collection', 'beer_write']
